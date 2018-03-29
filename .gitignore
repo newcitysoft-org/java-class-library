@@ -13,6 +13,7 @@ hs_err_pid*
 *.classpath
 *.project
 *.prefs
+*.iml
 /target
 /log
 .idea

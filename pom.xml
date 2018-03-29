@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>java-lang-management</module>
+        <module>java-security</module>
     </modules>
     <packaging>pom</packaging>
 
