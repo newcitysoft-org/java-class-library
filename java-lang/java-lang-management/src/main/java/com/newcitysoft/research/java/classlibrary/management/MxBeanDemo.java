@@ -1,5 +1,7 @@
 package com.newcitysoft.research.java.classlibrary.management;
 
+import org.junit.Test;
+
 import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 import java.io.IOException;
@@ -21,7 +23,12 @@ import java.util.List;
  * @date 2018/3/29 13:00
  */
 public class MxBeanDemo {
-    public static void main(String[] args) {
+    @Test
+    public void test() {
+        main();
+    }
+
+    public static void main() {
         RuntimeMXBean mxBean = ManagementFactory.getRuntimeMXBean();
         String name = mxBean.getName();
         System.out.println("jvm pid:" + Integer.parseInt(name.substring(0, name.indexOf("@"))));

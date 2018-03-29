@@ -8,9 +8,9 @@
     <artifactId>java-class-library</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>java-lang-management</module>
         <module>java-security</module>
         <module>java-util</module>
+        <module>java-lang</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -20,6 +20,12 @@
             <artifactId>lombok</artifactId>
             <version>1.16.18</version>
             <scope>provided</scope>
+        </dependency>
+        <!--单元测试框架 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
         </dependency>
     </dependencies>
 
