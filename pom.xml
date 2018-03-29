@@ -10,6 +10,7 @@
     <modules>
         <module>java-lang-management</module>
         <module>java-security</module>
+        <module>java-util</module>
     </modules>
     <packaging>pom</packaging>
 
