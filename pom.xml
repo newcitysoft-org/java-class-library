@@ -11,6 +11,7 @@
         <module>java-security</module>
         <module>java-util</module>
         <module>java-lang</module>
+        <module>java-sql</module>
     </modules>
     <packaging>pom</packaging>
 
