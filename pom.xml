@@ -12,6 +12,14 @@
         <module>java-util</module>
         <module>java-lang</module>
         <module>java-sql</module>
+        <module>java-io</module>
+        <module>java-nio</module>
+        <module>java-net</module>
+        <module>java-rmi</module>
+        <module>java-beans</module>
+        <module>java-text</module>
+        <module>java-time</module>
+        <module>java-math</module>
     </modules>
     <packaging>pom</packaging>
 
