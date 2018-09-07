@@ -10,7 +10,7 @@ import java.util.concurrent.BlockingQueue;
 public class StudentDemo {
 
     public static void main(String[] args) {
-        BlockingQueue<Student> queue = new ArrayBlockingQueue<>(2);
+        BlockingQueue<Student> queue = new ArrayBlockingQueue<>(1);
 
         Runnable set = new SetRunnable(queue);
         Runnable get = new GetRunnable(queue);
