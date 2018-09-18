@@ -1,0 +1,2 @@
+className=com.newcitysoft.research.java.classlibrary.reflect.demo1.Teacher
+methodName=love
