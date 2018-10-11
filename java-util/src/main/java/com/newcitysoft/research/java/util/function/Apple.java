@@ -1,4 +1,4 @@
-package com.newcitysoft.research.java.util;
+package com.newcitysoft.research.java.util.function;
 
 /**
  * @author lixin.tian@renren-inc.com

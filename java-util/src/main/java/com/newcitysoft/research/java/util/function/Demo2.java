@@ -1,4 +1,4 @@
-package com.newcitysoft.research.java.util;
+package com.newcitysoft.research.java.util.function;
 
 import java.util.function.Function;
 

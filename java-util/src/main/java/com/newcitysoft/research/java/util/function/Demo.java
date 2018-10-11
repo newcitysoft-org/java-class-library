@@ -1,4 +1,6 @@
-package com.newcitysoft.research.java.util;
+package com.newcitysoft.research.java.util.function;
+
+import com.newcitysoft.research.java.util.function.Apple;
 
 import java.util.ArrayList;
 import java.util.Comparator;
