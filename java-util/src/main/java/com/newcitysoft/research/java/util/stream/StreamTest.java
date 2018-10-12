@@ -6,9 +6,11 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.joining;
 
 /**
  * @author lixin.tian@renren-inc.com
@@ -72,6 +74,10 @@ public class StreamTest {
                 .distinct()
                 .collect(Collectors.toList());
 
+        Set<String> collect1 = getDataList().stream()
+                .map(t -> t.getTrader().getCity())
+                .collect(Collectors.toSet());
+
         System.out.println(collect);
     }
 
@@ -81,7 +87,7 @@ public class StreamTest {
     @Test
     public void test3() {
         List<Trader> collect = getTraderList().stream()
-                .filter(trader -> trader.getCity() == "Cambridge")
+                .filter(trader -> trader.getCity().equals("Cambridge"))
                 .sorted(Comparator.comparing(Trader::getName))
                 .collect(Collectors.toList());
 
@@ -93,12 +99,32 @@ public class StreamTest {
      */
     @Test
     public void test4() {
+        System.out.println("误解题意");
         List<String> collect = getTraderList().stream()
                 .map(Trader::getName)
                 .sorted(String::compareTo)
                 .collect(Collectors.toList());
 
         System.out.println(collect);
+
+        System.out.println("正题");
+
+        String traderStr = getDataList().stream()
+                .map(t -> t.getTrader().getName())
+                .distinct()
+                .sorted()
+                .reduce("", (n1, n2) -> n1 + n2);
+
+        System.out.println(traderStr);
+
+        System.out.println("高效");
+        String traderStr2 = getDataList().stream()
+                .map(t -> t.getTrader().getName())
+                .distinct()
+                .sorted()
+                .collect(joining());
+
+        System.out.println(traderStr2);
     }
 
     /**
@@ -107,7 +133,7 @@ public class StreamTest {
     @Test
     public void test5() {
         boolean b = getTraderList().stream()
-                .anyMatch(trader -> trader.getCity() == "Milan");
+                .anyMatch(trader -> trader.getCity().equals("Milan"));
 
         System.out.println(b);
     }
@@ -164,6 +190,10 @@ public class StreamTest {
         Optional<Transaction> first = getDataList().stream()
                 .sorted(Comparator.comparingInt(Transaction::getValue))
                 .findFirst();
+
+        Optional<Transaction> min = getDataList().stream()
+                .min(Comparator.comparing(Transaction::getValue));
+
 
         first.ifPresent(t -> {
             System.out.println("交易额最小的交易:" + t);
