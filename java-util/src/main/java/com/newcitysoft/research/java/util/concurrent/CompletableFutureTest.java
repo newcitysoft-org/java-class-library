@@ -4,9 +4,15 @@ import org.junit.Test;
 
 import java.util.concurrent.*;
 import java.util.function.BiFunction;
-import java.util.function.Supplier;
 
-public class CompletableFutureDemo {
+/**
+ * description
+ *
+ * @author : newcitysoft@163.com
+ * @date : 2019-03-14 11:52
+ * @version : 1.0
+ */
+public class CompletableFutureTest {
 
 
     @Test
@@ -51,12 +57,41 @@ public class CompletableFutureDemo {
         return function.apply(a1, a2);
     }
 
-    public void testAsync2(long a1, long a2) {
-        CompletableFuture.supplyAsync(() -> {
-            return a1 + a2;
+    @Test
+    public void testSupplyAsync() {
+        CompletableFuture<Long> longFuture = (CompletableFuture<Long>) supplyAsyncAdd(4, 7);
+
+        longFuture.exceptionally(ex -> {
+            System.out.println("Exception caught: " + ex.getMessage());
+            return 0L;
+        }).thenAccept(result -> {
+            System.out.println("result: " + result);
         });
+
+        try {
+            System.out.println(longFuture.get(1, TimeUnit.SECONDS));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
     }
 
+    public static Future<Long> supplyAsyncAdd(long a1, long a2) {
+        CompletableFuture<Long> completableFuture = CompletableFuture.supplyAsync(() -> {
+            try {
+                Long sum = delaySum((a, b) -> a + b, a1, a2);
+                return sum;
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+
+        return completableFuture;
+    }
 
 
 
