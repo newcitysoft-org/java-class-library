@@ -1,4 +1,4 @@
-package com.newcitysoft.research.java.util;
+package com.newcitysoft.research.java.util.concurrent;
 
 import java.util.List;
 import java.util.Vector;
