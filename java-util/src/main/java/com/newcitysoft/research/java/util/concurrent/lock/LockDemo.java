@@ -1,4 +1,4 @@
-package com.newcitysoft.research.java.util.concurrent;
+package com.newcitysoft.research.java.util.concurrent.lock;
 
 import java.util.concurrent.locks.ReentrantLock;
 

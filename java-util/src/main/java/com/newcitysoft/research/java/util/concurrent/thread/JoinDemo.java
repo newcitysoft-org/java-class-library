@@ -1,4 +1,4 @@
-package com.newcitysoft.research.java.util.concurrent;
+package com.newcitysoft.research.java.util.concurrent.thread;
 
 /**
  * 线程等待，当前线程等待其他线程结束后，再运行以后的代码
