@@ -20,6 +20,7 @@
         <module>java-text</module>
         <module>java-time</module>
         <module>java-math</module>
+        <module>others</module>
     </modules>
     <packaging>pom</packaging>
 
